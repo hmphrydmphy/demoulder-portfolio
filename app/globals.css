@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ── Design tokens ── */
+:root {
+  --bg: #111114;
+  --surface: #1a1a20;
+  --surface-2: #22222c;
+  --border: #2e2e3a;
+  --foreground: #f0f0f8;
+  --muted: #8888aa;
+
+  /* Gradient stops */
+  --purple: #a855f7;
+  --pink: #ec4899;
+  --orange: #f97316;
+  --yellow: #fbbf24;
+  --cyan: #22d3ee;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, sans-serif;
+  min-height: 100dvh;
+  /* Ambient gradient blobs */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% 0%,  color-mix(in srgb, #a855f7 12%, transparent), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 90%,  color-mix(in srgb, #ec4899 10%, transparent), transparent),
+    radial-gradient(ellipse 50% 35% at 50% 50%,  color-mix(in srgb, #f97316 6%,  transparent), transparent);
+}
+
+/* ── Typography ── */
+.font-display { font-family: var(--font-playfair), Georgia, serif; }
+
+/* ── Animated gradient text ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 30%, #f97316 65%, #fbbf24 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* ── Glassmorphism card ── */
+.glass {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.glass:hover {
+  border-color: color-mix(in srgb, #a855f7 50%, var(--border));
+  box-shadow: 0 0 32px color-mix(in srgb, #a855f7 20%, transparent),
+              0 8px 32px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
+}
+
+/* ── Section alternating tint ── */
+.section-tint {
+  background-color: color-mix(in srgb, var(--surface) 40%, transparent);
+}
+
+/* ── Gradient border button ── */
+.btn-gradient {
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
+  transition: filter 0.2s, transform 0.2s;
+}
+.btn-gradient:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.btn-outline:hover {
+  border-color: #a855f7;
+  background: color-mix(in srgb, #a855f7 10%, transparent);
+  transform: translateY(-2px);
+}
+
+/* ── Animations ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+.animate-fade-up   { animation: fade-up 0.7s ease-out both; }
+.animate-fade-in   { animation: fade-in 0.7s ease-out both; }
+.animate-float     { animation: float 6s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.10s; }
+.delay-200 { animation-delay: 0.20s; }
+.delay-300 { animation-delay: 0.30s; }
+.delay-400 { animation-delay: 0.40s; }
+.delay-500 { animation-delay: 0.50s; }
+
+/* ── Scroll reveal (JS-free via IntersectionObserver-ready class) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Stat card gradient border ── */
+.stat-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ── Service icon glow ── */
+.service-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  box-shadow: 0 0 20px color-mix(in srgb, #a855f7 30%, transparent);
+}
+
+/* ── Testimonial quote accent ── */
+.testimonial-quote {
+  font-size: 4rem;
+  line-height: 1;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+
+/* ── Card transition ── */
+.glass {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
