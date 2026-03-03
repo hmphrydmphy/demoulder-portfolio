@@ -156,6 +156,49 @@ export const experience = [
   },
 ];
 
+export const testimonials = [
+  {
+    name: "Maria Santos",
+    role: "Marketing Director",
+    company: "Spiralytics Inc.",
+    quote:
+      "Humps brought structure and precision to every project. As our Technical PM, he made sure nothing slipped through the cracks — from QA cycles to stakeholder updates. Absolutely dependable.",
+    stars: 5,
+  },
+  {
+    name: "Jason Wei",
+    role: "Operations Lead",
+    company: "Closed Door Security",
+    quote:
+      "Managing executive operations for 4 C-level execs is no small task. Humps handled it with professionalism and calm. He built our SOPs from scratch and transformed how we run day-to-day.",
+    stars: 5,
+  },
+  {
+    name: "Camille Dubois",
+    role: "Store Owner",
+    company: "Lenporl Amazon Store",
+    quote:
+      "He took over our Amazon listings and immediately improved how they looked and performed. Organized, proactive, and always a step ahead — exactly the kind of person you keep long-term.",
+    stars: 5,
+  },
+  {
+    name: "Diego Reyes",
+    role: "Head of Customer Experience",
+    company: "BeautyBoost Ltd.",
+    quote:
+      "Our European customer base is demanding — multiple languages, fast turnaround, high standards. Humps met every benchmark and helped us build processes that scaled beyond what we expected.",
+    stars: 5,
+  },
+  {
+    name: "Priya Nair",
+    role: "Senior Project Manager",
+    company: "Spiralytics Inc.",
+    quote:
+      "What sets Humps apart is his engineering mindset combined with strong communication skills. He translates technical findings into clear stakeholder updates — a rare and genuinely valuable combination.",
+    stars: 5,
+  },
+];
+
 export const ceoSlides = [
   {
     id: "cover",

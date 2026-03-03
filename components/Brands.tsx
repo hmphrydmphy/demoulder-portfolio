@@ -2,82 +2,65 @@ import { brands } from "@/lib/data";
 
 export default function Brands() {
   return (
-    <section className="py-24" style={{ background: "#111" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="section" style={{ background: "#111111" }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+
         {/* Header */}
-        <div className="mb-14 reveal">
-          <span className="font-label text-grey block mb-3">BRAND IDENTITIES</span>
-          <h2 className="font-display text-cream" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}>
+        <div className="mb-20 reveal">
+          <span className="font-label text-dim block mb-5">Brand Identities</span>
+          <h2
+            className="font-display text-cream"
+            style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)" }}
+          >
             BRAND WORK.
           </h2>
         </div>
 
-        {/* 4-column grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* 4-col grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px" style={{ background: "var(--border)" }}>
           {brands.map((brand, i) => (
             <div
               key={brand.name}
-              className="brand-card rounded-xl overflow-hidden reveal"
-              style={{ transitionDelay: `${i * 80}ms` }}
+              className="brand-card reveal"
+              style={{ background: "#111111", transitionDelay: `${i * 80}ms` }}
             >
-              {/* Color block (top 60%) */}
+              {/* Color block */}
               <div
-                className="relative flex items-end justify-start p-5"
-                style={{
-                  background: brand.bg,
-                  minHeight: "200px",
-                }}
+                className="relative flex flex-col justify-end p-6"
+                style={{ background: brand.bg, minHeight: "220px" }}
               >
-                {/* Brand mark — large initial */}
+                {/* Giant initial */}
                 <span
-                  className="font-display absolute top-5 right-5 opacity-20"
-                  style={{
-                    fontSize: "5rem",
-                    color: brand.text,
-                    lineHeight: 1,
-                  }}
+                  className="font-display absolute top-4 right-5 opacity-15"
+                  style={{ fontSize: "6rem", color: brand.text, lineHeight: 1 }}
                 >
                   {brand.name.charAt(0)}
                 </span>
-                {/* Brand name */}
                 <div>
-                  <p className="font-label mb-1" style={{ color: brand.text, opacity: 0.6, fontSize: "0.55rem" }}>
-                    BRAND IDENTITY
-                  </p>
+                  <span className="font-label block mb-2" style={{ color: brand.text, opacity: 0.45, fontSize: "0.58rem" }}>
+                    Brand Identity
+                  </span>
                   <h3
-                    className="font-display leading-none"
-                    style={{
-                      color: brand.text,
-                      fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)",
-                    }}
+                    className="font-display"
+                    style={{ color: brand.text, fontSize: "clamp(1rem, 2vw, 1.4rem)", lineHeight: 1 }}
                   >
                     {brand.name}
                   </h3>
                 </div>
               </div>
 
-              {/* Bottom panel */}
-              <div
-                className="p-4"
-                style={{ background: "#1a1a1a", borderTop: "1px solid rgba(255,255,255,0.05)" }}
-              >
-                <p
-                  className="text-grey text-xs leading-relaxed mb-4"
-                  style={{ fontFamily: "var(--font-dm-sans)" }}
-                >
+              {/* Info */}
+              <div className="p-6" style={{ background: "#111111" }}>
+                <p className="text-dim mb-5" style={{ fontSize: "0.88rem", fontFamily: "var(--font-dm-sans)" }}>
                   {brand.tagline}
                 </p>
-                {/* Color swatches */}
-                <div className="flex gap-1.5">
-                  {brand.swatches.map((swatch) => (
+                <div className="flex gap-2">
+                  {brand.swatches.map((s) => (
                     <div
-                      key={swatch}
-                      className="w-6 h-6 rounded-full border"
-                      style={{
-                        background: swatch,
-                        borderColor: "rgba(255,255,255,0.1)",
-                      }}
-                      title={swatch}
+                      key={s}
+                      className="w-5 h-5 rounded-full"
+                      style={{ background: s, border: "1px solid rgba(240,236,228,0.08)" }}
+                      title={s}
                     />
                   ))}
                 </div>
@@ -85,6 +68,7 @@ export default function Brands() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import SocialPosts from "@/components/SocialPosts";
 import CampaignShowcase from "@/components/CampaignShowcase";
 import Brands from "@/components/Brands";
 import Results from "@/components/Results";
+import Testimonials from "@/components/Testimonials";
 import AboutSkills from "@/components/AboutSkills";
 import CeoSlideshow from "@/components/CeoSlideshow";
 import Contact from "@/components/Contact";
@@ -20,6 +21,7 @@ export default function Home() {
         <CampaignShowcase />
         <Brands />
         <Results />
+        <Testimonials />
         <AboutSkills />
         <CeoSlideshow />
         <Contact />

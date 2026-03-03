@@ -1,93 +1,74 @@
 export default function Contact() {
-  const socials = [
-    {
-      label: "LINKEDIN",
-      href: "https://www.linkedin.com/in/dhpimentel/",
-    },
-    {
-      label: "WHATSAPP",
-      href: "https://wa.me/639762608875",
-    },
-    {
-      label: "INSTAGRAM",
-      href: "https://instagram.com",
-    },
-    {
-      label: "TIKTOK",
-      href: "https://tiktok.com",
-    },
+  const links = [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/dhpimentel/" },
+    { label: "WhatsApp", href: "https://wa.me/639762608875" },
+    { label: "Instagram", href: "https://instagram.com" },
+    { label: "TikTok", href: "https://tiktok.com" },
   ];
 
   return (
-    <section id="contact" className="py-24" style={{ background: "#0a0a0a" }}>
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Top line */}
-        <div
-          className="w-full mb-16"
-          style={{ height: "1px", background: "rgba(245,240,232,0.08)" }}
-        />
+    <section id="contact" className="section" style={{ background: "#0a0a0a" }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
 
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Left: Heading + CTA */}
+        <div className="rule mb-20" />
+
+        <div className="grid md:grid-cols-2 gap-20 items-start">
+
+          {/* Left */}
           <div className="reveal">
-            <span className="font-label text-grey block mb-6">GET IN TOUCH</span>
+            <span className="font-label text-dim block mb-6">Get in touch</span>
             <h2
-              className="font-display text-cream mb-6"
-              style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.9 }}
+              className="font-display text-cream mb-8"
+              style={{ fontSize: "clamp(3.5rem, 9vw, 8rem)", lineHeight: 0.88 }}
             >
               LET&apos;S<br />BUILD<br />SOMETHING.
             </h2>
-            <p
-              className="text-grey text-base leading-relaxed max-w-sm mb-10"
-              style={{ fontFamily: "var(--font-dm-sans)" }}
-            >
-              Whether you need a project manager, a content strategist, or
-              someone who can do both — I&apos;m available and ready.
+            <p className="text-dim leading-relaxed max-w-sm mb-10" style={{ fontSize: "1rem" }}>
+              Whether you need a project manager, a content strategist, or someone who can do both
+              — I&apos;m available and ready.
             </p>
-            {/* Links */}
-            <div className="flex flex-col gap-3">
+
+            <div className="flex flex-col gap-4">
               <a
                 href="mailto:hmphrydmphy@gmail.com"
-                className="font-label text-cream hover:text-yellow transition-colors flex items-center gap-3"
+                className="font-label text-cream flex items-center gap-3 hover:text-red transition-colors"
+                style={{ fontSize: "0.72rem" }}
               >
-                <span style={{ color: "#e84f1d" }}>→</span>
+                <span className="text-red">→</span>
                 hmphrydmphy@gmail.com
               </a>
               <a
                 href="https://wa.me/639762608875"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-label text-cream hover:text-yellow transition-colors flex items-center gap-3"
+                className="font-label text-cream flex items-center gap-3 hover:text-red transition-colors"
+                style={{ fontSize: "0.72rem" }}
               >
-                <span style={{ color: "#e84f1d" }}>→</span>
+                <span className="text-red">→</span>
                 +63 976 260 8875
               </a>
               <a
                 href="https://www.linkedin.com/in/dhpimentel/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-label text-cream hover:text-yellow transition-colors flex items-center gap-3"
+                className="font-label text-cream flex items-center gap-3 hover:text-red transition-colors"
+                style={{ fontSize: "0.72rem" }}
               >
-                <span style={{ color: "#e84f1d" }}>→</span>
+                <span className="text-red">→</span>
                 linkedin.com/in/dhpimentel
               </a>
             </div>
           </div>
 
-          {/* Right: Big email + CTAs */}
+          {/* Right */}
           <div className="reveal">
             {/* Email block */}
-            <div
-              className="p-8 mb-6"
-              style={{ border: "1px solid rgba(245,240,232,0.08)" }}
-            >
-              <span className="font-label text-grey block mb-3" style={{ fontSize: "0.6rem" }}>
-                EMAIL
-              </span>
+            <div className="p-10 mb-6" style={{ border: "1px solid var(--border)" }}>
+              <span className="font-label text-dim block mb-4" style={{ fontSize: "0.62rem" }}>Email</span>
               <a
                 href="mailto:hmphrydmphy@gmail.com"
-                className="font-display text-cream hover:text-yellow transition-colors block"
-                style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)", lineHeight: 1.1 }}
+                className="font-display text-cream hover:text-red transition-colors block"
+                style={{ fontSize: "clamp(1.2rem, 2.2vw, 1.7rem)", lineHeight: 1.15 }}
               >
                 hmphrydmphy@gmail.com
               </a>
@@ -97,56 +78,51 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
               <a
                 href="mailto:hmphrydmphy@gmail.com"
-                className="font-label text-cream px-6 py-4 text-center flex-1 transition-all duration-200 hover:brightness-110"
-                style={{ background: "#e84f1d", fontSize: "0.72rem" }}
+                className="btn-red flex-1 text-center"
               >
-                SEND AN EMAIL
+                Send an Email
               </a>
               <a
                 href="https://wa.me/639762608875"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-cream font-label text-cream px-6 py-4 text-center flex-1"
-                style={{ fontSize: "0.72rem" }}
+                className="btn-ghost flex-1 text-center"
               >
-                WHATSAPP ME
+                WhatsApp Me
               </a>
             </div>
 
-            {/* Social row */}
-            <div className="flex flex-wrap gap-3">
-              {socials.map((s) => (
+            {/* Socials */}
+            <div className="flex flex-wrap gap-2">
+              {links.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-label text-grey hover:text-cream transition-colors px-4 py-2"
-                  style={{
-                    border: "1px solid rgba(245,240,232,0.08)",
-                    fontSize: "0.6rem",
-                  }}
+                  className="font-label text-dim hover:text-cream transition-colors px-4 py-2.5"
+                  style={{ border: "1px solid var(--border)", fontSize: "0.62rem" }}
                 >
                   {s.label}
                 </a>
               ))}
             </div>
           </div>
+
         </div>
 
         {/* Footer */}
-        <div
-          className="mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderTop: "1px solid rgba(245,240,232,0.06)" }}
-        >
+        <div className="rule mt-20 mb-8" />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-end gap-0.5">
             <span className="font-display text-cream text-xl tracking-widest">HUMPS</span>
-            <span className="font-display text-red text-2xl pb-0.5">.</span>
+            <span className="font-display text-red text-2xl" style={{ lineHeight: 1 }}>.</span>
           </div>
-          <span className="font-label text-grey" style={{ fontSize: "0.6rem" }}>
+          <span className="font-label text-dim" style={{ fontSize: "0.62rem" }}>
             © {new Date().getFullYear()} Demoulder Humphrey Pimentel · Rodriguez, Rizal, Philippines
           </span>
         </div>
+
       </div>
     </section>
   );
