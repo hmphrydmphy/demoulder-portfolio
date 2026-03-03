@@ -2,7 +2,7 @@ import { skills, experience } from "@/lib/data";
 
 export default function AboutSkills() {
   return (
-    <section id="about" style={{ background: "#e84f1d" }}>
+    <section id="about" style={{ background: "#10B981" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-28">
         <div className="grid md:grid-cols-2 gap-20 items-start">
 

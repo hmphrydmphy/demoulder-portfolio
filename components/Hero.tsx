@@ -8,14 +8,14 @@ export default function Hero() {
         className="absolute inset-y-0 left-0 z-0 hidden md:block"
         style={{
           width: "52%",
-          background: "#e84f1d",
+          background: "#10B981",
           clipPath: "polygon(0 0, 100% 0, 82% 100%, 0 100%)",
         }}
       />
       {/* Mobile: red top half */}
       <div
         className="absolute top-0 left-0 right-0 md:hidden"
-        style={{ height: "52%", background: "#e84f1d" }}
+        style={{ height: "52%", background: "#10B981" }}
       />
 
       {/* Content */}

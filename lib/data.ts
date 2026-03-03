@@ -60,9 +60,9 @@ export const brands = [
   {
     name: "HUMPS CREATES",
     tagline: "Content Strategist · PM · Creative",
-    bg: "#e84f1d",
+    bg: "#10B981",
     text: "#f5f0e8",
-    swatches: ["#e84f1d", "#0a0a0a", "#f5f0e8", "#f5c842"],
+    swatches: ["#10B981", "#0a0a0a", "#f5f0e8", "#f5c842"],
   },
   {
     name: "FRESHBREW COFFEE",
@@ -208,7 +208,7 @@ export const ceoSlides = [
     sub: "Content Strategist · Project Manager · Creative Director",
     body: "Demoulder Humphrey Pimentel — available for full-time, part-time, and project-based engagements.",
     bg: "#0a0a0a",
-    accent: "#e84f1d",
+    accent: "#10B981",
   },
   {
     id: "problem",
@@ -234,7 +234,7 @@ export const ceoSlides = [
       { num: "04", title: "OPTIMIZE", desc: "Track KPIs, learn from data, iterate fast." },
     ],
     bg: "#0a0a0a",
-    accent: "#e84f1d",
+    accent: "#10B981",
   },
   {
     id: "proof",
@@ -247,7 +247,7 @@ export const ceoSlides = [
       { brand: "Closed Door Security", result: "4 execs supported", detail: "Ops + booking management", tag: "Operations" },
     ],
     bg: "#111",
-    accent: "#e84f1d",
+    accent: "#10B981",
   },
   {
     id: "services",
@@ -274,7 +274,7 @@ export const ceoSlides = [
     sub: "Let's build something that actually works.",
     email: "hmphrydmphy@gmail.com",
     whatsapp: "+63 976 260 8875",
-    bg: "#e84f1d",
+    bg: "#10B981",
     accent: "#0a0a0a",
   },
 ];

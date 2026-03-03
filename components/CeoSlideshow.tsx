@@ -94,7 +94,7 @@ export default function CeoSlideshow() {
               <div className="grid md:grid-cols-2 min-h-[500px]">
                 <div
                   className="flex flex-col justify-center p-12 md:p-16"
-                  style={{ background: "#e84f1d" }}
+                  style={{ background: "#10B981" }}
                 >
                   <span className="font-label text-bg/60 block mb-6" style={{ fontSize: "0.6rem" }}>
                     {slide.label}
@@ -309,7 +309,7 @@ export default function CeoSlideshow() {
                     className="font-label px-8 py-3 transition-all"
                     style={{
                       background: slide.accent,
-                      color: "#e84f1d",
+                      color: "#10B981",
                       border: "1px solid rgba(10,10,10,0.3)",
                       fontSize: "0.7rem",
                     }}
@@ -355,7 +355,7 @@ export default function CeoSlideshow() {
                 style={{
                   width: i === current ? "2rem" : "0.5rem",
                   height: "0.25rem",
-                  background: i === current ? "#e84f1d" : "rgba(245,240,232,0.2)",
+                  background: i === current ? "#10B981" : "rgba(245,240,232,0.2)",
                 }}
                 aria-label={`Go to slide ${i + 1}`}
               />
@@ -384,7 +384,7 @@ export default function CeoSlideshow() {
               onClick={next}
               className="font-label px-5 py-2.5 text-cream transition-all duration-200"
               style={{
-                background: "#e84f1d",
+                background: "#10B981",
                 fontSize: "0.7rem",
               }}
               onMouseEnter={(e) => {
