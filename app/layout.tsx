@@ -1,35 +1,43 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, DM_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const bebasNeue = Bebas_Neue({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-bebas",
+  display: "swap",
 });
 
-const playfair = Playfair_Display({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-space-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Demoulder Humphrey Pimentel — Marketing Expert & Project Manager",
+  title: "HUMPS — Content Strategist & Project Manager",
   description:
-    "BS Computer Engineering graduate with 4+ years in digital marketing, technical project management, QA, and e-commerce operations. Based in Rodriguez, Rizal, Philippines.",
+    "Demoulder Humphrey Pimentel — Marketing Expert, Content Strategist, and Project Manager. Based in Rodriguez, Rizal, Philippines.",
   keywords: [
+    "content strategist",
     "project manager",
     "marketing expert",
-    "creative strategist",
-    "QA engineer",
     "digital marketing",
-    "e-commerce operations",
-    "virtual assistant",
+    "QA engineer",
     "Philippines",
   ],
   openGraph: {
-    title: "Demoulder Humphrey Pimentel — Marketing Expert & Project Manager",
+    title: "HUMPS — Content Strategist & Project Manager",
     description:
-      "4+ years spanning digital marketing, project management, QA, and e-commerce. Let's build something great.",
+      "I build content systems that make brands impossible to ignore.",
     type: "website",
   },
 };
@@ -40,7 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html
+      lang="en"
+      className={`${bebasNeue.variable} ${dmSans.variable} ${spaceMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

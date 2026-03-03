@@ -1,9 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
-import Testimonials from "@/components/Testimonials";
+import SocialPosts from "@/components/SocialPosts";
+import CampaignShowcase from "@/components/CampaignShowcase";
+import Brands from "@/components/Brands";
+import Results from "@/components/Results";
+import AboutSkills from "@/components/AboutSkills";
+import CeoSlideshow from "@/components/CeoSlideshow";
 import Contact from "@/components/Contact";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -14,10 +16,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Testimonials />
+        <SocialPosts />
+        <CampaignShowcase />
+        <Brands />
+        <Results />
+        <AboutSkills />
+        <CeoSlideshow />
         <Contact />
       </main>
     </>
