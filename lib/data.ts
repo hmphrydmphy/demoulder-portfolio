@@ -1,9 +1,9 @@
 export const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Content", href: "#content" },
-  { label: "Results", href: "#results" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Resume", href: "/resume" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const heroStats = [
@@ -59,7 +59,7 @@ export const campaigns = [
 export const brands = [
   {
     name: "HUMPS CREATES",
-    tagline: "Content Strategist · PM · Creative",
+    tagline: "Technical PM · QA Engineer · Creative",
     bg: "#10B981",
     text: "#f5f0e8",
     swatches: ["#10B981", "#0a0a0a", "#f5f0e8", "#f5c842"],
@@ -205,7 +205,7 @@ export const ceoSlides = [
     type: "cover",
     label: "PORTFOLIO PITCH · 2025",
     headline: "HUMPS",
-    sub: "Content Strategist · Project Manager · Creative Director",
+    sub: "Technical Project Manager · QA Engineer · Operations Specialist",
     body: "Demoulder Humphrey Pimentel — available for full-time, part-time, and project-based engagements.",
     bg: "#0a0a0a",
     accent: "#10B981",

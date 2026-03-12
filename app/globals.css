@@ -1,29 +1,39 @@
 @import "tailwindcss";
 
-/* ── Design tokens ── */
+/* ── Design Tokens ── */
 :root {
-  --bg: #0a0a0a;
-  --surface: #111111;
-  --cream: #f0ece4;
-  --cream-dim: rgba(240, 236, 228, 0.55);
-  --red: #10B981;
-  --dim: #444444;
-  --border: rgba(240, 236, 228, 0.07);
+  --bg: #0f0c08;
+  --surface: #161108;
+  --surface-2: #1e1810;
+  --cream: #f2e8d6;                         /* warm ivory — primary text */
+  --cream-dim: rgba(242, 232, 214, 0.58);   /* secondary text */
+  --accent: #e8900a;                         /* warm amber/gold */
+  --accent-dim: rgba(232, 144, 10, 0.10);
+  --dim: #7a6545;                            /* muted warm */
+  --border: rgba(242, 232, 214, 0.07);
+  --border-accent: rgba(232, 144, 10, 0.28);
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-cream: var(--cream);
-  --color-red: var(--red);
+  --color-cream-dim: var(--cream-dim);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
   --color-dim: var(--dim);
+  /* Legacy aliases */
+  --color-red: var(--accent);
+  --color-grey: var(--cream-dim);
+  --color-yellow: #f59e0b;
   --font-display: var(--font-bebas);
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-space-mono);
 }
 
 /* ── Base ── */
-html { scroll-behavior: smooth; background: #0a0a0a; }
+html { scroll-behavior: smooth; background: #0f0c08; }
 
 body {
   background: var(--bg);
@@ -34,13 +44,12 @@ body {
   min-height: 100dvh;
 }
 
-/* ── Typography ── */
+/* ── Typography helpers ── */
 .font-display {
   font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
   line-height: 0.9;
   letter-spacing: 0.01em;
 }
-
 .font-label {
   font-family: var(--font-space-mono), 'Space Mono', monospace;
   font-size: 0.72rem;
@@ -48,22 +57,15 @@ body {
   text-transform: uppercase;
 }
 
-/* ── Divider ── */
-.rule {
-  width: 100%;
-  height: 1px;
-  background: var(--border);
-}
-
-/* ── Section padding helper ── */
+/* ── Layout helpers ── */
 .section { padding-top: 7rem; padding-bottom: 7rem; }
+.rule    { width: 100%; height: 1px; background: var(--border); }
 
 /* ── Entrance animations ── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-up { animation: fade-up 0.9s ease-out both; }
 .delay-100 { animation-delay: 0.10s; }
 .delay-200 { animation-delay: 0.20s; }
@@ -75,14 +77,33 @@ body {
 /* ── Scroll reveal ── */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ── Floating icon animations (3 variants cycle) ── */
+@keyframes float-a {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  40%       { transform: translateY(-22px) rotate(6deg); }
+  70%       { transform: translateY(10px) rotate(-3deg); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  35%       { transform: translateY(18px) rotate(-5deg); }
+  65%       { transform: translateY(-14px) rotate(4deg); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-16px) rotate(8deg); }
+}
+.float-a { animation: float-a var(--dur, 9s) ease-in-out infinite; }
+.float-b { animation: float-b var(--dur, 11s) ease-in-out infinite; }
+.float-c { animation: float-c var(--dur, 8s) ease-in-out infinite; }
+
 /* ── Buttons ── */
 .btn-primary {
-  background: var(--cream);
+  background: var(--accent);
   color: var(--bg);
   font-family: var(--font-space-mono), monospace;
   font-size: 0.72rem;
@@ -95,48 +116,8 @@ body {
 .btn-primary:hover { opacity: 0.85; }
 
 .btn-ghost {
-  border: 1px solid rgba(240, 236, 228, 0.18);
-  color: var(--cream);
-  font-family: var(--font-space-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.9rem 2rem;
-  transition: border-color 0.2s, color 0.2s;
-  display: inline-block;
-}
-.btn-ghost:hover { border-color: var(--red); color: var(--red); }
-
-.btn-red {
-  background: var(--red);
-  color: var(--cream);
-  font-family: var(--font-space-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.9rem 2rem;
-  transition: opacity 0.2s;
-  display: inline-block;
-}
-.btn-red:hover { opacity: 0.9; }
-
-/* On red background */
-.btn-dark-on-red {
-  background: #0a0a0a;
-  color: #f0ece4;
-  font-family: var(--font-space-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.9rem 2rem;
-  transition: opacity 0.2s;
-  display: inline-block;
-}
-.btn-dark-on-red:hover { opacity: 0.82; }
-
-.btn-ghost-on-red {
-  border: 1px solid rgba(10, 10, 10, 0.3);
-  color: #0a0a0a;
+  border: 1px solid var(--border-accent);
+  color: var(--accent);
   font-family: var(--font-space-mono), monospace;
   font-size: 0.72rem;
   letter-spacing: 0.14em;
@@ -145,82 +126,148 @@ body {
   transition: background 0.2s, color 0.2s;
   display: inline-block;
 }
-.btn-ghost-on-red:hover { background: #0a0a0a; color: #f0ece4; }
+.btn-ghost:hover { background: var(--accent); color: var(--bg); }
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-accent:hover { opacity: 0.9; }
+
+.btn-red {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-red:hover { opacity: 0.88; }
+
+.btn-dark-on-red {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-dark-on-red:hover { opacity: 0.85; }
+
+.btn-ghost-on-red {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--cream);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-ghost-on-red:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* ── Campaign cards ── */
+.campaign-card { position: relative; overflow: hidden; cursor: pointer; }
+.campaign-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,8,4,0.92) 0%, rgba(10,8,4,0.35) 55%, transparent 100%);
+  z-index: 5;
+  transition: opacity 0.35s ease;
+}
 
 /* ── Post cards ── */
-.post-card { transition: transform 0.3s ease; }
-.post-card:hover { transform: translateY(-5px); }
+.post-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.post-card:hover { border-color: var(--border-accent); transform: translateY(-3px); }
+
 .post-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(232, 79, 29, 0.88);
-  opacity: 0;
+  background: rgba(232, 144, 10, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
 }
 .post-card:hover .post-overlay { opacity: 1; }
 
 /* ── Brand cards ── */
-.brand-card { transition: transform 0.35s ease; overflow: hidden; }
-.brand-card:hover { transform: scale(1.02); }
-
-/* ── Result boxes ── */
-.result-box {
-  position: relative;
-  border: 1px solid var(--border);
-  transition: border-color 0.3s;
+.brand-card {
+  transition: transform 0.3s ease;
   overflow: hidden;
+  border: 1px solid var(--border);
 }
-.result-box::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0; height: 2px;
-  background: var(--red);
-  transition: width 0.45s ease;
-}
-.result-box:hover::after { width: 100%; }
-.result-box:hover { border-color: rgba(232, 79, 29, 0.25); }
-
-/* ── Campaign cards ── */
-.campaign-card { position: relative; overflow: hidden; transition: transform 0.35s; }
-.campaign-card:hover { transform: scale(1.012); }
-.campaign-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.2) 55%, transparent 100%);
-}
-
-/* ── Skill bars ── */
-.skill-bar-fill {
-  height: 100%;
-  width: 0;
-  background: #0a0a0a;
-  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.reveal.visible .skill-bar-fill { width: var(--skill-w); }
+.brand-card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
 
 /* ── Testimonial cards ── */
 .testimonial-card {
-  border-top: 2px solid var(--border);
+  border-right: 1px solid var(--border);
   padding-top: 2rem;
-  transition: border-color 0.3s;
+  padding-bottom: 2rem;
 }
-.testimonial-card:hover { border-color: var(--red); }
+.testimonial-card:last-child { border-right: none; }
 
-/* ── Slideshow ── */
+/* ── Result box ── */
+.result-box { transition: border-color 0.3s; }
+.result-box:hover { border-color: var(--border-accent) !important; }
+
+/* ── Hover utilities ── */
+.hover-border-accent { transition: border-color 0.3s; }
+.hover-border-accent:hover { border-color: var(--border-accent) !important; }
+
+.hover-bg-surface { transition: background 0.3s; }
+.hover-bg-surface:hover { background: var(--surface) !important; }
+
+.project-card { transition: border-color 0.3s; }
+.project-card:hover { border-color: var(--border-accent) !important; }
+
+.project-card:hover .arrow-hint { gap: 1rem; }
+.arrow-hint { display: flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
+
+/* ── Skill bar ── */
+@keyframes skill-grow {
+  from { width: 0; }
+  to   { width: var(--skill-w); }
+}
+.skill-bar-fill {
+  background: var(--accent);
+  animation: skill-grow 1.2s ease-out both;
+}
+
+/* ── Slide enter ── */
 @keyframes slide-in {
-  from { opacity: 0; transform: translateX(24px); }
+  from { opacity: 0; transform: translateX(12px); }
   to   { opacity: 1; transform: translateX(0); }
 }
-.slide-enter { animation: slide-in 0.35s ease-out; }
+.slide-enter { animation: slide-in 0.35s ease-out both; }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #2a2a2a; }
-::-webkit-scrollbar-thumb:hover { background: var(--red); }
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #3a2e1e; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* ── Selection ── */
-::selection { background: var(--red); color: var(--cream); }
+/* ── Text selection ── */
+::selection { background: var(--accent); color: var(--bg); }

@@ -1,31 +1,27 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SocialPosts from "@/components/SocialPosts";
-import CampaignShowcase from "@/components/CampaignShowcase";
-import Brands from "@/components/Brands";
+import ProofStrip from "@/components/ProofStrip";
+import AboutSnapshot from "@/components/AboutSnapshot";
+import FeaturedWork from "@/components/FeaturedWork";
+import HowIWork from "@/components/HowIWork";
+import ServicesSection from "@/components/ServicesSection";
 import Results from "@/components/Results";
 import Testimonials from "@/components/Testimonials";
-import AboutSkills from "@/components/AboutSkills";
-import CeoSlideshow from "@/components/CeoSlideshow";
+import CTABanner from "@/components/CTABanner";
 import Contact from "@/components/Contact";
-import ScrollReveal from "@/components/ScrollReveal";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <ScrollReveal />
-      <Navbar />
-      <main>
-        <Hero />
-        <SocialPosts />
-        <CampaignShowcase />
-        <Brands />
-        <Results />
-        <Testimonials />
-        <AboutSkills />
-        <CeoSlideshow />
-        <Contact />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <ProofStrip />
+      <AboutSnapshot />
+      <FeaturedWork />
+      <HowIWork />
+      <ServicesSection />
+      <Results />
+      <Testimonials />
+      <CTABanner />
+      <Contact />
+    </main>
   );
 }

@@ -24,13 +24,13 @@ export default function CeoSlideshow() {
   return (
     <section
       className="py-24"
-      style={{ background: "#111" }}
+      style={{ background: "var(--surface)" }}
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 reveal">
           <div>
-            <span className="font-label text-grey block mb-3">CEO PITCH DECK</span>
+            <span className="font-label block mb-3" style={{ color: "var(--accent)" }}>CEO PITCH DECK</span>
             <h2
               className="font-display text-cream"
               style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
@@ -39,8 +39,8 @@ export default function CeoSlideshow() {
             </h2>
           </div>
           <p
-            className="text-grey max-w-xs text-sm leading-relaxed"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
+            className="max-w-xs text-sm leading-relaxed"
+            style={{ color: "var(--cream-dim)", fontFamily: "var(--font-dm-sans)" }}
           >
             A 6-slide deck designed to show any C-suite why Humps is the right hire.
           </p>
